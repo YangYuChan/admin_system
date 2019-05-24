@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a,a:hover{
+    text-decoration: none;
+    outline: none;
+}
+ol li,
+ul li{
+    list-style: none;
+}
+html,body{
+    font-size: 14px;
+}
