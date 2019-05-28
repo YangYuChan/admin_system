@@ -38,14 +38,9 @@
     import md5 from  '@/assets/js/md5'
     import Cookies from 'js-cookie'  
     const chooseLanguage = Cookies.get('language');
-    var vaildate;
-    if(chooseLanguage === 'en'){
-        vaildate = require('@/utils/vaildate_en')
-    } else {
-        vaildate = require('@/utils/vaildate_zh')
-    }
-    // import { validUsername, validPassword } from '@/utils/vaildate_zh'  // 解构赋值
-    import { mapState, mapMutations } from 'vuex'
+    import { validUsername, validPassword } from '@/utils/vaildate_zh'  // 解构赋值
+    import { Login } from '@/api/user'
+    import { mapState, mapMutations, mapActions } from 'vuex'
   export default {
     data() {
       return {
@@ -59,10 +54,10 @@
         },
         rules: {
           username: [
-            { required: true, validator: vaildate.validUsername, trigger: 'blur' },
+            { required: true, validator:validUsername, trigger: 'blur' },
           ],
           password: [
-            { required: true, validator: vaildate.validPassword, trigger: 'blur' }
+            { required: true, validator:validPassword, trigger: 'blur' }
           ],
         },
       }
@@ -77,50 +72,36 @@
         changeLang(lang) {
             this.$i18n.locale = lang
             this.$store.dispatch('app/setLanguage', lang)
-            if(lang === 'en'){
-                console.log('en')
-                vaildate = require('@/utils/vaildate_en')
-            } else {
-                console.log('zh')
-                vaildate = require('@/utils/vaildate_zh')
-            }
             this.$message({
                 message: 'Switch Language Success',
                 type: 'success'
             })
         },
-        submitForm(loginForm){  
+        submitForm(formName){  
             let pwd = md5(this.loginForm.password)
-            this.$refs[loginForm].validate((valid) => {
+            this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    this.$axios({
-                        url: this.path + '/api/Report/CheckLogin',
-                        method: 'post',
-                        data: {
-                            username:this.loginForm.username,
-                            password:pwd
-                        },
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'signature':'6854a0b52b2a040be38ba973cdb3064b'
-                        }
+                    Login({
+                        username:this.loginForm.username,
+                        password:pwd
                     }).then(res => {
-                        if(res.data.Success == true){
+             
+                        if(res.code === 200){
                             this.$message({
-                                message: res.data.Msg,
+                                message: res.Data.message,
                                 type: 'success'
                             });
-                            localStorage.setItem("token",res.data.Data.token);
-                            this.$router.push("/merchantReport")
+                            localStorage.setItem("token",res.Data.token);
+                            this.$router.push("/home")
                         } else {
                             this.$message({
-                                message: res.data.Msg,
+                                message: res.Data.message,
                                 type: 'error'
                             });
                         }
 
                     }).catch(error => {
-
+                                console.log(111)
                     })
                 } else {
                     console.log('error submit!!');
