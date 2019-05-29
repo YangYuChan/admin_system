@@ -10,6 +10,10 @@
       text-color="#c5c5c5"
       active-text-color="#ffd04b"
     >
+      <el-menu-item index="/dashBoard">
+        <i class="el-icon-menu"></i>
+        <span slot="title">首页</span>
+      </el-menu-item>
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>

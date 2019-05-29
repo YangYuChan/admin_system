@@ -2,6 +2,10 @@
   <div class="home-container">
     <Sidebar></Sidebar>
     <Header></Header>
+    <div class="content" :class="[ isCollapse ? 'hide-sidebar' : '' ]">
+      <router-view/>
+    </div>
+    
   </div>
 </template>
 
@@ -9,11 +13,21 @@
 // @ is an alias to /src
 import Sidebar from '@/components/layout/Sidebar.vue'
 import Header from '@/components/layout/Header.vue'
+import { mapState,mapMutations } from 'vuex'
 export default {
   name: 'home',
   components: {
     Sidebar,
     Header
+  },
+  computed:{
+        ...mapState('app',['isCollapse'])
+  },
+  methods:{
+    ...mapMutations('app',['SET_COLLAPSE']),
+        Collapse(){
+            this.SET_COLLAPSE()
+        },
   }
 }
 </script>

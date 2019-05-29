@@ -7,9 +7,9 @@
                 </a>
                 <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
+                <!-- <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
                 <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-                <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+                <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
                 </el-breadcrumb>
             </div>
             <div class="header-right">
@@ -103,7 +103,7 @@ $default-color: #333;
     justify-content: flex-start;
     flex-direction: row;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 30px;
     .fold-icon{
         margin-right: 20px;
         color: $default-color;
@@ -124,7 +124,7 @@ $default-color: #333;
     justify-content: flex-start;
     flex-direction: row;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 30px;
     color: $default-color;
     .search,.notice,.help,.language{
         margin-right: 20px;

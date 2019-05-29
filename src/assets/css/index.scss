@@ -1,3 +1,5 @@
+$pirmary-color:#333333;
+$secondary-color: #666666;
 .login-panel {
   .el-form-item__label,
   .el-radio__label {
@@ -24,12 +26,18 @@
   height: 100%;
 }
 // header style
-.header-container {
+.header-container,
+.content {
   position: relative;
   margin-left: 200px;
   box-sizing: border-box;
-  border-bottom: 1px solid #ccc;
   transition: 0.28s margin-left;
+}
+.header-container {
+  border-bottom: 1px solid #ccc;
+}
+.content {
+    background-color: #f5f5f5;
 }
 .hide-sidebar {
   margin-left: 64px;
@@ -51,4 +59,92 @@
       border-bottom: 1px solid #dcdfe6;
     }
   }
+}
+// dashboard style
+.dashboard {
+  padding: 30px;
+  .model-title{
+      text-align: left;
+      margin-bottom: 30px;
+      b{
+          font-size: 24px;
+          color: $pirmary-color;
+      }
+      span{
+          color: $secondary-color;
+      }
+  }
+  .el-row{
+      margin: 0 -15px!important;
+  }
+  .el-col {
+    padding: 0 15px!important;
+    &:nth-child(1) {
+        .el-card{
+            background-color: #f56c6c;
+        }
+    }
+    &:nth-child(2) {
+        .el-card{
+            background-color: #67c23a;
+        }
+    }
+    &:nth-child(3) {
+        .el-card{
+            background-color: #409eff;
+        }
+    }
+    &:nth-child(4) {
+        .el-card{
+            background-color: #e6a23c;
+        }
+    }
+    
+  }
+  .card-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    .item-icon {
+      i{
+          font-size: 48px;
+      }
+    }
+    .item-message{
+        .font{
+            font-size: 16px;
+        }
+        .num{
+            font-size: 28px;
+        }
+    }
+  }
+  .echarts-box,
+  .table-box{
+    margin-top: 30px;
+  }
+  .echarts-box{
+      .line-echarts,
+      .columnar-echarts{
+          position: relative;
+          background-color: #fff;
+          width: 49%;
+          padding: 30px;
+          display: flex;
+          box-sizing: border-box;
+          justify-content: space-between;
+      }
+  }
+}
+.echarts-container,
+.table-content{
+    display: flex;
+    justify-content: space-between;
+}
+.table-content{
+    .table-item{
+        width: 49%;
+    }
 }
