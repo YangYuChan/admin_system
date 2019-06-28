@@ -9,6 +9,7 @@
       background-color="#2c4357"
       text-color="#c5c5c5"
       active-text-color="#ffd04b"
+      router
     >
       <el-menu-item index="/dashBoard">
         <i class="el-icon-menu"></i>
@@ -17,19 +18,19 @@
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>导航一</span>
+          <span>表格</span>
         </template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
+          <el-menu-item index="/tableBoard">表格1</el-menu-item>
           <el-menu-item index="1-2">选项2</el-menu-item>
           <el-menu-item index="1-3">选项3</el-menu-item>
-        
+
       </el-submenu>
      <el-submenu index="2">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>导航二</span>
         </template>
-      
+
           <el-menu-item index="2-1">选项1</el-menu-item>
           <el-menu-item index="2-2">选项2</el-menu-item>
           <el-menu-item index="2-3">选项3</el-menu-item>
@@ -65,27 +66,27 @@
   </div>
 </template>
 <script>
-import { mapState,mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
-      
+
     }
   },
   computed: {
-      ...mapState('app',{
-            isCollapse:state => state.isCollapse
-        }),
+    ...mapState('app', {
+      isCollapse: state => state.isCollapse
+    })
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath)
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    handleClose (key, keyPath) {
+      console.log(key, keyPath)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .el-menu-vertical-demo{

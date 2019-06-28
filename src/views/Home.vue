@@ -1,11 +1,12 @@
 <template>
   <div class="home-container">
     <Sidebar></Sidebar>
-    <Header></Header>
-    <div class="content" :class="[ isCollapse ? 'hide-sidebar' : '' ]">
+
+    <div class="main-container" :class="[ isCollapse ? 'hide-sidebar' : '' ]">
+      <Header></Header>
       <router-view/>
     </div>
-    
+
   </div>
 </template>
 

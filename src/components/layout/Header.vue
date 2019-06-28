@@ -1,5 +1,5 @@
 <template>
-    <div class="header-container" :class="[ isCollapse ? 'hide-sidebar' : '' ]">
+    <div class="header-container">
         <header class="home-header">
             <div class="header-left">
                 <a href="javascript:;" class="fold-icon" @click="Collapse">
@@ -13,7 +13,7 @@
                 </el-breadcrumb>
             </div>
             <div class="header-right">
-               
+
                 <a href="javascript:;" class="search">
                     <el-autocomplete
                     :class="[isSearch ? 'has-width':'']" v-model="keyword"
@@ -41,7 +41,7 @@
                         <el-dropdown-item>简体中文</el-dropdown-item>
                     </el-dropdown-menu>
                     </el-dropdown>
-                    
+
                 </a>
                 <div class="userinfo">
                     <a href="javascript:;" class="photo">
