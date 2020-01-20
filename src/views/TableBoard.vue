@@ -1,26 +1,35 @@
 <template>
   <div class="table-box">
-    <div class="model-title">
-      <b>表格</b>
-      <span> ( 用于展示多条结构类似的数据，可对数据进行排序、筛选、对比或其他自定义操作。 )</span>
+    <div class="crumb-box">
+       <el-breadcrumb separator="/">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item><a href="/">列表</a></el-breadcrumb-item>
+      </el-breadcrumb>
     </div>
+   
     <div class="table-content">
-      <div class="table-item">
-        <el-table
-          ref="multipleTable"
-          :data="tableData"
-          tooltip-effect="dark"
-          @selection-change="handleSelectionChange"
-        >
-          <el-table-column type="selection"></el-table-column>
-          <el-table-column label="日期">
-            <template slot-scope="scope">{{ scope.row.date }}</template>
-          </el-table-column>
-          <el-table-column prop="name" label="姓名"></el-table-column>
-          <el-table-column prop="address" label="地址" show-overflow-tooltip></el-table-column>
-        </el-table>
+        <template>
+            <el-table
+              :data="tableData"
+              border
+              style="width: 100%">
+              <el-table-column
+                prop="date"
+                label="日期"
+                width="180">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="姓名"
+                width="180">
+              </el-table-column>
+              <el-table-column
+                prop="address"
+                label="地址">
+              </el-table-column>
+            </el-table>
+          </template>
       </div>
-    </div>
   </div>
 </template>
 <script>
@@ -84,5 +93,9 @@ export default {
 
   .el-table .success-row {
     background: #f0f9eb;
+  }
+  .crumb-box{
+    font-size: 18px;
+    margin: 0  0 30px;
   }
 </style>

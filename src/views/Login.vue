@@ -17,7 +17,7 @@
                         </el-form-item>
                      </el-form>
                      <div class="forget_password">{{ $t('login.forgetpwd')}} <a href="">{{ $t('login.here')}}</a> </div>
-                     <div class="change-lang">
+                     <!-- <div class="change-lang">
                         <el-radio-group v-model="lang" size="small" @change="changeLang(lang)">
                             <el-radio label="zh">
                                 简体中文
@@ -26,7 +26,7 @@
                                 English
                             </el-radio>
                          </el-radio-group>
-                        </div>
+                        </div> -->
                 </section>
             </div>
             <img src="../assets/img/login_bg.jpg" alt="" class="bg">
@@ -127,17 +127,17 @@
             }
         }
     .login-title{
-        font-size: 32px;
-        height: 42px;
+        font-size: 48px;
         color: #ffffff;
         text-align: center;
-        margin: 30px auto;
-        font-weight: 100;
+        margin: 50px auto;
+        letter-spacing: 20px
     }
     .login-panel{
-        height: 400px;
-        background: rgba(0,0,0,0.4);
+        height: auto;
+        background: rgba(27, 18, 18, 0.4);
         padding: 30px 50px;
+        border-radius: 10px;
         text-align: left;
         .el-form-item{
             color: #ffffff;

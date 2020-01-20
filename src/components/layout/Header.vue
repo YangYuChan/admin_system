@@ -2,6 +2,7 @@
     <div class="header-container">
         <header class="home-header">
             <div class="header-left">
+                
                 <a href="javascript:;" class="fold-icon" @click="Collapse">
                     <i :class="[ isCollapse ? 'el-icon-s-unfold' :'el-icon-s-fold']"></i>
                 </a>
@@ -93,7 +94,7 @@ export default {
 <style lang="scss" scoped>
 $default-color: #333;
 .home-header {
-    height: 50px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -104,11 +105,14 @@ $default-color: #333;
     flex-direction: row;
     align-items: center;
     padding: 0 30px;
+    .el-breadcrumb{
+     font-size: 16px;
+    }
     .fold-icon{
-        margin-right: 20px;
+        margin-right: 10px;
         color: $default-color;
         i{
-            font-size: 20px;
+            font-size: 30px;
             &:hover{
                 color: #666;
                 cursor: pointer;

@@ -1,13 +1,14 @@
 <template>
   <div class="sidebar">
+    <div class="logo"><img src="../../assets/img/logo.png" alt=""></div>
     <el-menu
       default-active="1-4-1"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
       :collapse="isCollapse"
-      background-color="#2c4357"
-      text-color="#c5c5c5"
+      background-color="#212a39"
+      text-color="#b7c0cd"
       active-text-color="#ffd04b"
       router
     >
@@ -89,6 +90,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.logo{
+  background: #4c84ff;
+ padding: 10px 0;
+}
+.logo img{
+  height: 50px;
+}
 .el-menu-vertical-demo{
     height: 100%;
 }
