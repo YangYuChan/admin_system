@@ -4,19 +4,26 @@
             <div class="login-box">
                 <header class="login-title">{{ $t('login.title') }}</header>
                 <section class="login-panel">
+                    <div class="logo"><img src="../assets/img/logo.png" alt=""></div>
                     <el-form :label-position="labelPosition" label-width="80px" :model="loginForm" ref="loginForm" :rules="rules">
-                        <el-form-item :label="$t('login.username')" prop="username">
-                            <el-input v-model="loginForm.username"></el-input>
+                        <el-form-item prop="username">
+                            <el-input v-model="loginForm.username" :placeholder="$t('login.username')"></el-input>
                         </el-form-item>
-                        <el-form-item :label="$t('login.password')" prop="password">
-                            <el-input v-model="loginForm.password" type="password"></el-input>
+                        <el-form-item  prop="password">
+                            <el-input v-model="loginForm.password" type="password" :placeholder="$t('login.password')"></el-input>
+                        </el-form-item>
+                        <el-form-item style="margin-bottom:10px">
+                            <div class="flex-between-center">
+                                <el-checkbox v-model="checked">记住密码</el-checkbox>
+                                <span class="forget_password">{{ $t('login.forgetpwd')}} <a href="">{{ $t('login.here')}}</a> </span>
+                            </div>
                         </el-form-item>
                          <el-form-item>
                             <el-button type="primary" @click="submitForm('loginForm')">{{ $t('login.logIn')}}</el-button>
                             <!-- <el-button @click="resetForm('ruleForm')">重置</el-button> -->
                         </el-form-item>
                      </el-form>
-                     <div class="forget_password">{{ $t('login.forgetpwd')}} <a href="">{{ $t('login.here')}}</a> </div>
+                     <div class="forget_password">{{ $t('login.noAccount')}} <a href="">{{ $t('login.register')}}</a></div>
                      <!-- <div class="change-lang">
                         <el-radio-group v-model="lang" size="small" @change="changeLang(lang)">
                             <el-radio label="zh">
@@ -48,6 +55,7 @@
         path:_globel.path,
         md5: md5.hex_md5,
         lang: 'zh',
+        checked:false,
         loginForm: {
           username: '',
           password: '',
@@ -122,37 +130,39 @@
     margin: 150px auto;
     .logo{
             text-align: center;
+            margin-bottom: 30px;
             img{
                 width: 100px;
             }
         }
     .login-title{
-        font-size: 48px;
+        font-size: 32px;
         color: #ffffff;
         text-align: center;
-        margin: 50px auto;
-        letter-spacing: 20px
+        margin: 50px auto 30px;
+        letter-spacing: 4px
     }
     .login-panel{
         height: auto;
-        background: rgba(27, 18, 18, 0.4);
+        background: rgba(0, 0, 0, 0.6);
         padding: 30px 50px;
         border-radius: 10px;
         text-align: left;
         .el-form-item{
             color: #ffffff;
-            margin-bottom: 12px;
+            margin-bottom: 26px;
         } 
         .el-button--primary{
             width: 100%;
-            margin-top: 30px;
+            margin-top: 10px;
+        }
+        .el-checkbox{
+            color: #ffffff
         }
         .forget_password{
-            margin-top: 30px;
-            color: #dddddd;
-            height: 20px;
+            color: #eee;
             a{
-                color: #ffffff;
+                color: #409eff;
                 &:hover{
                     text-decoration: underline
                 }

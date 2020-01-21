@@ -8,11 +8,23 @@ body{
   .el-radio__label {
     color: #dddddd;
   }
+  .el-form--label-top .el-form-item__label{
+    padding: 0;
+  }
 }
+.el-dialog__header{
+  text-align: left;
+}
+
 .el-menu {
   border-right: none;
-  text-align: left;
-  
+  text-align: left
+}
+.el-breadcrumb{
+  font-size: 16px;
+}
+.el-form-item__error{
+  line-height: 1.5;
 }
 .el-submenu .el-menu-item {
   background-color: #1d2531 !important;
@@ -41,7 +53,7 @@ body{
   transition: 0.5s; 
 }
 .content-container{
-  padding: 50px;
+  padding: 20px 50px;
   
 }
 .header-container {
@@ -156,4 +168,49 @@ body{
     .table-item{
         width: 49%;
     }
+}
+// form
+.filter-box{
+  margin-bottom: 20px;
+  text-align: left;
+}
+.filter-box .demo-form-inline{
+  padding: 20px 20px 0;
+}
+.filter-box .el-form-item{
+  margin-right: 50px;
+  margin-bottom: 15px;
+}
+.filter-box .el-form-item .el-select,
+.filter-box .el-form-item .el-input{
+  width: 220px;
+}
+.el-date-editor .el-range-separator{
+  width: 15%;
+}
+.filter-box  .filter-btn {
+  border-top: 1px solid #e4e7ed;
+  background-color: #f5f7fa;
+  margin-top: 10px;
+  text-align: right;
+  padding: 7px 30px 7px 0;
+}
+.filter-box .el-tabs--border-card>.el-tabs__content{
+  padding: 0;
+}
+.page-block{
+  margin: 30px auto;
+  text-align: right;
+}
+.dialog-form .el-input{
+  width: 380px;
+}
+.dialog-form .el-checkbox-group,
+.dialog-form .el-radio-group {
+  width: 380px;
+  text-align: left;
+}
+.dialog-form .el-checkbox-group .el-checkbox {
+  float: left;
+  width: 160px;
 }

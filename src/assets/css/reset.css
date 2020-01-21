@@ -31,3 +31,21 @@ html,body{
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(136, 136, 136, 1);
 }
+.flex-between-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-start-center{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+}

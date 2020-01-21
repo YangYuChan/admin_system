@@ -12,6 +12,26 @@ import './assets/css/reset.css'
 import './assets/css/index.scss'
 import './assets/font/iconfont.css'
 
+import '@/assets/Rich_text/skins/ui/oxide/skin.min.css'; //富文本样式
+import tinymce from 'tinymce/tinymce'; //配置富文本
+import 'tinymce/themes/silver/theme.min.js' //引入富文本的主要脚本
+import Editor from '@tinymce/tinymce-vue'; //引用富文本组件
+import lang from '@/assets/Rich_text/zh_CN.js'; //引用中文语言
+
+import 'tinymce/plugins/image'
+import 'tinymce/plugins/link'
+import 'tinymce/plugins/code'
+import 'tinymce/plugins/table'
+import 'tinymce/plugins/lists'
+import 'tinymce/plugins/contextmenu'
+import 'tinymce/plugins/wordcount'
+import 'tinymce/plugins/colorpicker'
+import 'tinymce/plugins/textcolor'
+import 'tinymce/plugins/fullscreen'
+
+tinymce.addI18n('zh_CN', lang); //注册中文语言
+Vue.component('Editor', Editor); //注册全局组件
+
 Vue.config.productionTip = false
 // 在引入 Element 时，可以传入一个全局配置对象。该对象目前支持 size 与 zIndex 字段。size 用于改变组件的默认尺寸，zIndex 设置弹框的初始 z-index（默认值：2000）
 Vue.use(ElementUI, {

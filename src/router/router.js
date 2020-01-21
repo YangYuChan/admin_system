@@ -11,8 +11,9 @@ const routes = [
     name: 'home',
     component: Home,
     children: [{
-      path: '/dashBoard',
+      path: '/',
       name: 'dashBoard',
+      alisa:'dashBoard',
       component: () => import('@/views/DashBoard.vue')
     },
     {
